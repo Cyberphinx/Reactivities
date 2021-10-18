@@ -39,7 +39,7 @@ export default function ActivityListItem({ activity }: Props) {
                     to={`/activities/${activity.id}`}
                     color='teal'
                     floated='right'
-                    content='view'
+                    content='View'
                 />
             </Segment>
         </Segment.Group>
