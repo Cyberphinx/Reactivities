@@ -17,8 +17,7 @@ namespace Application.Activities
         public class Handler : IRequestHandler<Query, Result<List<ActivityDto>>>
         {
             private readonly DataContext _context;
-            private readonly ILogger<List> _logger;
-        private readonly IMapper _mapper;
+            private readonly IMapper _mapper;
             public Handler(DataContext context, IMapper mapper)
             {
                 _mapper = mapper;
