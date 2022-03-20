@@ -15,6 +15,9 @@ namespace Domain
         public bool IsCancelled { get; set; }
         public ICollection<ActivityAttendee> Attendees { get; set; } = new List<ActivityAttendee>();
 
-        public ICollection<Comment> Comments { get; set; }
+        // don't forget to initalise the Comments list in the Activity entity class,
+        // otehrwise when you have the activity object the comments is null, 
+        // and you cannot add a new comment to something that is null, only something which is a list. 
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

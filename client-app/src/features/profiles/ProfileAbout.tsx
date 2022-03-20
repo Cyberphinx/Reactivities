@@ -1,9 +1,10 @@
+import { observer } from "mobx-react-lite";
 import React, { useState } from "react";
 import { Button, Grid, Header, Tab } from "semantic-ui-react";
 import { useStore } from "../../app/stores/store";
 import ProfileEditForm from "./ProfileEditForm";
 
-export default function ProfileAbout() {
+export default observer(function ProfileAbout() {
     const { profileStore } = useStore();
     const { isCurrentUser, profile } = profileStore;
     const [editMode, setEditMode] = useState(false);
@@ -29,4 +30,4 @@ export default function ProfileAbout() {
             </Grid>
         </Tab.Pane>
     )
-}
+})
