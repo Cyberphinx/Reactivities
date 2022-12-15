@@ -18,7 +18,7 @@ export default observer(function ActivityFilters() {
                 />
                 <Menu.Item 
                     content="I'm going"
-                    active={predicate.has("isGoingl")}
+                    active={predicate.has("isGoing")}
                     onClick={() => setPredicate("isGoing", "true")} 
                 />
                 <Menu.Item 

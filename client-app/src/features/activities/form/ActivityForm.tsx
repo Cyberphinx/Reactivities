@@ -60,7 +60,17 @@ export default observer(function ActivityForm() {
                 validationSchema={validationSchema}
                 enableReinitialize
                 initialValues={activity}
-                onSubmit={values => handleFormSubmit(values)}>
+                onSubmit={values => function handleFormSubmit(activity: ActivityFormValues) {
+                    if (!activity.id) {
+                        let newActivity = {
+                            ...activity,
+                            id: uuid()
+                        };
+                        createActivity(newActivity).then(() => history.push(`/activities/${newActivity.id}`))
+                    } else {
+                        updateActivity(activity).then(() => history.push(`/activities/${activity.id}`))
+                    }
+                }}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <MyTextInput name='title' placeholder='Title' />

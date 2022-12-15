@@ -34,7 +34,7 @@ export class ActivityFormValues {
     constructor(activity?: ActivityFormValues) {
         if (activity) {
             this.id = activity.id;
-            this.title  = activity.title;
+            this.title = activity.title;
             this.category = activity.category;
             this.description = activity.description;
             this.date = activity.date;

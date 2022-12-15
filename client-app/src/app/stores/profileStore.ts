@@ -1,4 +1,3 @@
-import { User } from './../models/user';
 import { Photo, Profile, UserActivity } from './../models/profile';
 import { runInAction, reaction } from 'mobx';
 import { makeAutoObservable } from 'mobx';

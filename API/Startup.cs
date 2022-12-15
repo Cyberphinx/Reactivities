@@ -52,6 +52,11 @@ namespace API
 
             app.UseRouting();
 
+            // to use the index.html under wwwroot file (which is a copy of the client-app build for production)
+            app.UseDefaultFiles();
+            // to serve static files by default under the wwwroot folder for production
+            app.UseStaticFiles();
+
             app.UseCors("CorsPolicy");
 
             // authentication must be before authorization
@@ -63,6 +68,7 @@ namespace API
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chat");
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
